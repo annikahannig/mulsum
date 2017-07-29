@@ -1,0 +1,9 @@
+{
+  "name": "mulsum",
+  "version": "1.0.0",
+  "description": "A meteme webclient",
+  "main": "build/index.html",
+  "repository": "github.com/mhannig/mulsum",
+  "author": "Matthias Hannig",
+  "license": "MIT"
+}
