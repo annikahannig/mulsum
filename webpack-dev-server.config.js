@@ -10,21 +10,17 @@ const buildPath       = path.resolve(__dirname, 'build');
 const config = {
 
   entry: [
-    'webpack/hot/dev-server',
-    'webpack/hot/only-dev-server',
     path.join(__dirname, '/src/app/app.jsx'),
   ],
 
   devServer: {
     contentBase: 'src/www',
-    devtool: 'eval',
     hot: true,
     inline: true,
     port: 3000,
     host: 'localhost',
   },
 
-  devtool: 'eval',
   output: {
     path: buildPath,
     filename: 'app.js',
@@ -32,16 +28,25 @@ const config = {
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new TransferWebpackPlugin([
-      {from: 'www'},
+      {from: 'public'},
     ], path.resolve(__dirname, 'src')),
   ],
+
+  resolve: {
+     extensions: [ ".js", ".jsx" ],
+     modules: [
+        "node_modules",
+        path.resolve(__dirname, "src/app")
+     ]
+  },
+
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
-        loaders: ['react-hot', 'babel-loader'],
+        loaders: ['react-hot-loader', 'babel-loader'],
         exclude: [nodeModulesPath],
       },
     ],
