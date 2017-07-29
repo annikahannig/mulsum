@@ -1,0 +1,11 @@
+
+*.swp
+*.swo
+
+*.pyc
+__pycache__
+
+build/
+node_modules/
+
+
