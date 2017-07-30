@@ -14,7 +14,7 @@ const config = {
   ],
 
   devServer: {
-    contentBase: 'src/www',
+    contentBase: 'src/public',
     hot: true,
     inline: true,
     port: 3000,
