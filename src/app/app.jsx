@@ -1,8 +1,24 @@
 
-import foo from './foo'
+/*
+ * app.jsx
+ * -------
+ *
+ * The main js application: mete95 for endpoints.
+ */
+
+import React from 'react'
+import ReactDOM from 'react-dom'
 
 
-console.log("App running.");
+const App = function() {
+    return (
+        <div>
+            Test 123.
+        </div>
+    );
+}
 
-foo();
+
+const ctx = document.getElementById("app");
+ReactDOM.render(<App />, ctx);
 
